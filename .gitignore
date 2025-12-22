@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Generated offline vendor assets (copied in postinstall)
+public/vendor/
+
+# Production
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Environment
+.env
+.env*.local
+.env.production
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Lock files (commit one; Vercel uses it to pick package manager)
+# package-lock.json
+yarn.lock
+# pnpm-lock.yaml
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts

@@ -1,0 +1,232 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Univers";
+  src: url("/fonts/UniversRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Adding Univers Bold font for title */
+@font-face {
+  font-family: "Univers";
+  src: url("/fonts/UniversBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/fonts/OpenDyslexic-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  /* House colors (avoid pure black/white) */
+  --white-text: #F6F8EF; /* House White */
+  --black-text: #231F20; /* House Black */
+
+  /* Core theme tokens */
+  --foreground: var(--black-text);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--black-text);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--black-text);
+  --primary: var(--black-text);
+  --primary-foreground: var(--white-text);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: var(--black-text);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: var(--black-text);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--white-text);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  /* Walking Book Design System - Brand Colors */
+  --orange: #FF751F; /* Primary brand orange for hero panels and accents */
+  --dark-sidebar: #231F20; /* Dark charcoal for reader sidebar */
+  --beige: #DEFAE7; /* Warm beige for reading surface */
+  --reader-bg: #F2F1EC;
+  --reader-text: var(--black-text);
+  --reader-highlight: #C1F27F;
+  --reader-accent: #C3CD92;
+  --reader-accent-soft: rgba(195, 205, 146, 0.18);
+  --reader-font-family: "Shippori Mincho B1", serif;
+  /* end */
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: var(--black-text);
+  --sidebar-primary: var(--black-text);
+  --sidebar-primary-foreground: var(--white-text);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: var(--black-text);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: var(--white-text);
+  --card: oklch(0.145 0 0);
+  --card-foreground: var(--white-text);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: var(--white-text);
+  --primary: var(--white-text);
+  --primary-foreground: var(--black-text);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: var(--white-text);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: var(--white-text);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: var(--white-text);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: var(--white-text);
+  --sidebar-primary: var(--white-text);
+  --sidebar-primary-foreground: var(--black-text);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: var(--white-text);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+  --reader-bg: #F2F1EC;
+  --reader-text: var(--white-text);
+  --reader-highlight: #C1F27F;
+  --reader-accent: #C3CD92;
+  --reader-accent-soft: rgba(195, 205, 146, 0.25);
+  --reader-font-family: "Shippori Mincho B1", serif;
+}
+
+@theme inline {
+  /* Walking Book Typography System */
+  --font-sans: "Univers", "system-ui", sans-serif; /* Headings, UI elements, buttons */
+  --font-serif: "Shippori Mincho B1", serif; /* Body text, reading content */
+  --font-mono: "Geist Mono", "Geist Mono Fallback"; /* Code and monospace */
+  /* end */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Walking Book color tokens mapped to Tailwind utilities */
+  --color-orange: var(--orange);
+  --color-dark-sidebar: var(--dark-sidebar);
+  --color-beige: var(--beige);
+  --color-white-text: var(--white-text);
+  --color-black-text: var(--black-text);
+  /* end */
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Show hand cursor for actionable UI controls */
+  a[href],
+  button:not(:disabled),
+  input[type="button"]:not(:disabled),
+  input[type="submit"]:not(:disabled),
+  input[type="reset"]:not(:disabled),
+  summary,
+  [role="button"]:not([aria-disabled="true"]) {
+    @apply cursor-pointer;
+  }
+
+  /* Disabled controls should not look clickable */
+  button:disabled,
+  input:disabled,
+  [role="button"][aria-disabled="true"] {
+    @apply cursor-not-allowed;
+  }
+
+  /* Adding gentle zoom-out animation for desktop hero image */
+  @keyframes zoomOut {
+    from {
+      transform: scale(1.05);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .hero-zoom {
+    animation: zoomOut 1s ease-out forwards;
+  }
+
+  @keyframes quickstartSpin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .quickstart-spin {
+    animation: quickstartSpin 30s linear infinite;
+  }
+}
