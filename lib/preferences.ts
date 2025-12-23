@@ -77,8 +77,8 @@ export const READER_FONT_OPTIONS: ReaderFontOption[] = [
   {
     id: "sans",
     label: "Sans Serif",
-    description: "Univers",
-    stack: '"Univers", "system-ui", -apple-system, BlinkMacSystemFont, sans-serif',
+    description: "Roboto",
+    stack: '"Roboto", "system-ui", -apple-system, BlinkMacSystemFont, sans-serif',
   },
   {
     id: "dyslexic",
