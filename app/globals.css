@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
-  font-family: "Univers";
-  src: url("/fonts/UniversRegular.ttf") format("truetype");
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -13,8 +13,8 @@
 
 /* Adding Univers Bold font for title */
 @font-face {
-  font-family: "Univers";
-  src: url("/fonts/UniversBold.ttf") format("truetype");
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -125,7 +125,7 @@
 
 @theme inline {
   /* Walking Book Typography System */
-  --font-sans: "Univers", "system-ui", sans-serif; /* Headings, UI elements, buttons */
+  --font-sans: "Roboto", "system-ui", sans-serif; /* Headings, UI elements, buttons */
   --font-serif: "Shippori Mincho B1", serif; /* Body text, reading content */
   --font-mono: "Geist Mono", "Geist Mono Fallback"; /* Code and monospace */
   /* end */
